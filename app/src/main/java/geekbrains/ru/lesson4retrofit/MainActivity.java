@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
         if (checkInternet()) return;
         switch (view.getId()) {
             case R.id.btnLoad:
-                presenter.onClickLoadUser();
+                presenter.onClickLoadUser(editText.getText().toString());
                 break;
             case R.id.btnLoadRepos:
                 presenter.onClickRepos(editText.getText().toString());

@@ -36,16 +36,16 @@ public class Model {
 
 
     public interface RestApi{
-        @GET("users")
-        Single<RetrofitModel> getUser();
+        @GET("users/{path}")
+        Single<RetrofitModel> getUser(@Path("path") String user);
     }
     public interface RestApiRepos{
         @GET("users/{path}/repos")
         Single<RetrofitRepos[]> getRepos(@Path("path") String user);
     }
 
-    public void downloadUser() {
-        api.getUser().retry(2).subscribeOn(Schedulers.newThread())
+    public void downloadUser(String user) {
+        api.getUser(user).retry(2).subscribeOn(Schedulers.newThread())
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .subscribe(new DisposableSingleObserver<RetrofitModel>() {
 

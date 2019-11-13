@@ -12,8 +12,8 @@ public class Presenter implements ReturnResult {
         model = new Model(this, OrmApp.getComponent());
     }
 
-    public void onClickLoadUser() {
-        model.downloadUser();
+    public void onClickLoadUser(String user) {
+        model.downloadUser(user);
     }
     public void onClickRepos(String url) {model.downloadRepos(url);}
     public void onClickLoadFromDB(String name) {model.loadFromDB(name);}
