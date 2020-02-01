@@ -1,4 +1,4 @@
-package geekbrains.ru.lesson4retrofit;
+package geekbrains.ru.lesson4retrofit.model.retrofit;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

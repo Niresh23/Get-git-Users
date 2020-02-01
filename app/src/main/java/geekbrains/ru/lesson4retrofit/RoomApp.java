@@ -1,16 +1,17 @@
-package geekbrains.ru.lesson4retrofit.DataBase;
+package geekbrains.ru.lesson4retrofit;
 
 import android.app.Application;
 import androidx.room.Room;
 
+import geekbrains.ru.lesson4retrofit.DataBase.AppDatabase;
 import geekbrains.ru.lesson4retrofit.dagger.AppComponent;
 import geekbrains.ru.lesson4retrofit.dagger.DaggerAppComponent;
 
 
-public class OrmApp extends Application {
+public class RoomApp extends Application {
     private static final String DATABASE_NAME = "DATABASE_USERS";
     private static AppDatabase database;
-    public static OrmApp INSTANCE;
+    public static RoomApp INSTANCE;
     public static AppComponent component;
     @Override
     public void onCreate() {
@@ -24,7 +25,7 @@ public class OrmApp extends Application {
     public AppDatabase getDatabase() {
         return database;
     }
-    public static OrmApp get() {
+    public static RoomApp get() {
         return INSTANCE;
     }
     public static AppComponent getComponent() {

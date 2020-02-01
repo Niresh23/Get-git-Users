@@ -1,4 +1,4 @@
-package geekbrains.ru.lesson4retrofit;
+package geekbrains.ru.lesson4retrofit.model;
 
 public interface ReturnResult {
     void onSuccess(String result);

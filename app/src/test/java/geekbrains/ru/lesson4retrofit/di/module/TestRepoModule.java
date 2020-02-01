@@ -4,7 +4,7 @@ import org.mockito.Mockito;
 
 import dagger.Module;
 import dagger.Provides;
-import geekbrains.ru.lesson4retrofit.Model;
+import geekbrains.ru.lesson4retrofit.model.Model;
 
 @Module
 public class TestRepoModule {

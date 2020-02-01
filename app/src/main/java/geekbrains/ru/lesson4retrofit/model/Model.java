@@ -1,13 +1,15 @@
-package geekbrains.ru.lesson4retrofit;
+package geekbrains.ru.lesson4retrofit.model;
 
 import android.annotation.SuppressLint;
 
 
 import javax.inject.Inject;
 
-import geekbrains.ru.lesson4retrofit.DataBase.OrmApp;
+import geekbrains.ru.lesson4retrofit.RoomApp;
 import geekbrains.ru.lesson4retrofit.DataBase.User;
 
+import geekbrains.ru.lesson4retrofit.model.retrofit.RetrofitModel;
+import geekbrains.ru.lesson4retrofit.model.retrofit.RetrofitRepos;
 import geekbrains.ru.lesson4retrofit.dagger.AppComponent;
 import io.reactivex.Single;
 import io.reactivex.SingleObserver;
@@ -28,7 +30,7 @@ public class Model {
     private ReturnResult returnResult;
     private String result = "";
 
-    Model(ReturnResult returnResult, AppComponent component) {
+    public Model(ReturnResult returnResult, AppComponent component) {
         this.returnResult = returnResult;
         component.injectToModel(this);
     }
@@ -89,7 +91,7 @@ public class Model {
 
     public void loadFromDB(String request) {
         Single<Object> single = Single.create(emitter -> {
-            User user = OrmApp.get().getDatabase().userDao().findByName(request);
+            User user = RoomApp.get().getDatabase().userDao().findByName(request);
             emitter.onSuccess(user);
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
         Disposable disposable = new DisposableSingleObserver<User>() {
@@ -116,7 +118,7 @@ public class Model {
             User user = new User();
             user.setName(model.getLogin());
             user.setId(model.getId());
-            OrmApp.get().getDatabase().userDao().insertAll(user);
+            RoomApp.get().getDatabase().userDao().insertAll(user);
             emitter.onSuccess(user);
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
         Disposable disposable = new DisposableSingleObserver<User>() {

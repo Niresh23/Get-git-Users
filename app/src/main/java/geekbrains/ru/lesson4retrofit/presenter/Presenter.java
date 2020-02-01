@@ -1,6 +1,9 @@
-package geekbrains.ru.lesson4retrofit;
+package geekbrains.ru.lesson4retrofit.presenter;
 
-import geekbrains.ru.lesson4retrofit.DataBase.OrmApp;
+import geekbrains.ru.lesson4retrofit.RoomApp;
+import geekbrains.ru.lesson4retrofit.MainView;
+import geekbrains.ru.lesson4retrofit.model.ReturnResult;
+import geekbrains.ru.lesson4retrofit.model.Model;
 
 public class Presenter implements ReturnResult {
     private MainView mainView;
@@ -9,7 +12,7 @@ public class Presenter implements ReturnResult {
 
     public Presenter(MainView mainView) {
         this.mainView = mainView;
-        model = new Model(this, OrmApp.getComponent());
+        model = new Model(this, RoomApp.getComponent());
     }
 
     public void onClickLoadUser(String user) {

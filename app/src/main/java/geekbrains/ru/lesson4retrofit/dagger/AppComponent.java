@@ -3,7 +3,7 @@ package geekbrains.ru.lesson4retrofit.dagger;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import geekbrains.ru.lesson4retrofit.Model;
+import geekbrains.ru.lesson4retrofit.model.Model;
 
 @Component(modules = DaggerNetModule.class)
 @Singleton

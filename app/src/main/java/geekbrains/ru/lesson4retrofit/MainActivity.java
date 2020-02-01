@@ -11,7 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import geekbrains.ru.lesson4retrofit.DataBase.OrmApp;
+import geekbrains.ru.lesson4retrofit.presenter.Presenter;
 
 public class MainActivity extends AppCompatActivity implements MainView, View.OnClickListener {
 
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
         findViewById(R.id.btnLoad).setOnClickListener(this);
         findViewById(R.id.btnLoadRepos).setOnClickListener(this);
         findViewById(R.id.btnLoadDB).setOnClickListener(this);
+
     }
 
     public void onClick(View view) {

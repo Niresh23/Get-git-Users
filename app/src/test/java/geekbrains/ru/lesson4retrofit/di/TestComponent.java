@@ -1,6 +1,6 @@
 package geekbrains.ru.lesson4retrofit.di;
 import dagger.Component;
-import geekbrains.ru.lesson4retrofit.Model;
+import geekbrains.ru.lesson4retrofit.model.Model;
 import geekbrains.ru.lesson4retrofit.di.module.TestRepoModule;
 
 
